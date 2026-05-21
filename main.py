@@ -1,8 +1,7 @@
 import pandas as pd
 
 df_stats = pd.read_excel('estatisticas_jogadores.xlsx', sheet_name='Jogadores', header=1, skipfooter=1)
-df_resum = pd.read_excel('estatisticas_jogadores.xlsx', sheet_name='Resumo por Posição', header=1)
-df_strikers = pd.read_excel('estatisticas_jogadores.xlsx', sheet_name='Top 10 Artilheiros', header=1)
+
 
 def analise_grupo(coluna, valor):
     return df_stats.groupby(coluna)[valor].sum().sort_values(ascending = False)
